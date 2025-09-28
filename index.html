@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -50,7 +50,216 @@
             nav a {
                 color: white;
                 text-decoration: none;
-                Kemduong.jpg" alt="Kem dưỡng da ban đêm">
+                font-weight: bold;
+                padding: 8px 12px;
+                display: block;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+            .dropdown-content a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: #333;
+                font-weight: normal;
+            }
+
+                .dropdown-content a:hover {
+                    background: #f2f2f2;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Container chính */
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        /* Sản phẩm */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+            .card img {
+                width: 30%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 8px;
+            }
+
+
+            .card h3 {
+                font-size: 18px;
+                margin: 10px 0;
+                color: #333;
+            }
+
+            .card p {
+                font-size: 14px;
+                color: #666;
+            }
+
+            .card .price {
+                color: #e91e63;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .card button {
+                background: #e91e63;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+                .card button:hover {
+                    background: #d81b60;
+                }
+
+        /* Giỏ hàng */
+        #cart {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+            #cart h2 {
+                color: #e91e63;
+            }
+
+            #cart ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                #cart ul li {
+                    margin: 5px 0;
+                    font-size: 14px;
+                }
+
+        #total {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #cart button {
+            margin-top: 15px;
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+            #cart button:hover {
+                background: darkgreen;
+            }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-banner">
+            <h1>MIABEAUTY - Cửa Hàng Mỹ Phẩm Chính Hãng</h1>
+        </div>
+        <nav>
+            <a href="#trang-chu">Trang chủ</a>
+            <div class="dropdown">
+                <a href="#danh-muc">Danh mục</a>
+                <div class="dropdown-content">
+                    <a href="#son-moi">Son môi</a>
+                    <a href="#kem-duong">Kem dưỡng da</a>
+                    <a href="#sua-rua-mat">Sữa rửa mặt</a>
+                </div>
+            </div>
+            <a href="#lien-he">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Trang chủ -->
+        <section id="trang-chu">
+            <h2>Giới thiệu</h2>
+            <p>
+                Chào mừng bạn đến với <strong>MIABEAUTY</strong>.
+                Chúng tôi cung cấp mỹ phẩm chất lượng cao: son môi, kem dưỡng da, sữa rửa mặt...
+                Giúp bạn tự tin và xinh đẹp hơn mỗi ngày.
+            </p>
+        </section>
+
+        <!-- Danh mục sản phẩm -->
+        <section id="danh-muc">
+            <h2>Danh mục sản phẩm</h2>
+
+            <!-- Son môi -->
+            <h3 id="son-moi">Son môi</h3>
+            <div class="products">
+                <div class="card">
+                    <img src="images/son.jpg" alt="Son dưỡng môi">
+                    <h3>Son Dưỡng Ẩm Vaseline</h3>
+                    <p>Bảo vệ và dưỡng ẩm cho môi.</p>
+                    <p class="price">150,000₫</p>
+                    <button onclick="addToCart('Son Dưỡng Ẩm', 150000)">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <!-- Kem dưỡng da -->
+            <h3 id="kem-duong">Kem dưỡng da</h3>
+            <div class="products">
+                <div class="card">
+                    <img src="images/kemduong.jpg" alt="Kem dưỡng da ban đêm">
                     <h3>Kem Dưỡng Da Innisfree (dành cho dặt mặt)</h3>
                     <p>Giúp da phục hồi và căng mịn.</p>
                     <p class="price">480,000₫</p>
@@ -58,46 +267,19 @@
                 </div>
             </div>
 
-           <!-- Danh mục sản phẩm -->
-<section id="danh-muc">
-    <h2>Danh mục sản phẩm</h2>
+            <!-- Sữa rửa mặt -->
+            <h3 id="sua-rua-mat">Sữa rửa mặt </h3>
+            <div class="products">
+                <div class="card">
+                    <img src="images/suaruamat.jpg" alt="Sữa rửa mặt dịu nhẹ">
+                    <h3>Sữa Rửa Mặt Da Dầu Mụn Acnes</h3>
+                    <p>Làm sạch sâu, phù hợp mọi loại da.</p>
+                    <p class="price">180,000₫</p>
+                    <button onclick="addToCart('Sữa Rửa Mặt Dịu Nhẹ', 180000)">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
 
-    <!-- Son môi -->
-    <h3 id="son-moi">Son môi</h3>
-    <div class="products">
-        <div class="card">
-            <img src="images/son.jpg" alt="Son dưỡng môi">
-            <h3>Son Dưỡng Ẩm Vaseline</h3>
-            <p>Bảo vệ và dưỡng ẩm cho môi.</p>
-            <p class="price">150,000₫</p>
-            <button onclick="addToCart('Son Dưỡng Ẩm', 150000)">Thêm vào giỏ</button>
-        </div>
-    </div>
-
-    <!-- Kem dưỡng da -->
-    <h3 id="kem-duong">Kem dưỡng da</h3>
-    <div class="products">
-        <div class="card">
-            <img src="images/kemduong.jpg" alt="Kem dưỡng da ban đêm">
-            <h3>Kem Dưỡng Da Innisfree (dành cho dặt mặt)</h3>
-            <p>Giúp da phục hồi và căng mịn.</p>
-            <p class="price">480,000₫</p>
-            <button onclick="addToCart('Kem Dưỡng Da Ban Đêm', 480000)">Thêm vào giỏ</button>
-        </div>
-    </div>
-
-    <!-- Sữa rửa mặt -->
-    <h3 id="sua-rua-mat">Sữa rửa mặt </h3>
-    <div class="products">
-        <div class="card">
-            <img src="images/suaruamat.jpg" alt="Sữa rửa mặt dịu nhẹ">
-            <h3>Sữa Rửa Mặt Da Dầu Mụn Acnes</h3>
-            <p>Làm sạch sâu, phù hợp mọi loại da.</p>
-            <p class="price">180,000₫</p>
-            <button onclick="addToCart('Sữa Rửa Mặt Dịu Nhẹ', 180000)">Thêm vào giỏ</button>
-        </div>
-    </div>
-</section>
         <!-- Giỏ hàng -->
         <section id="cart">
             <h2>Giỏ hàng</h2>
@@ -153,5 +335,3 @@
     </script>
 </body>
 </html>
-
-
